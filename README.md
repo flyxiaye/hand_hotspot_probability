@@ -21,11 +21,3 @@ cd code
 python hMHS_individualize.py \
     --subj_t1 $t1w_path
 ```
-
-## The hMHS location of each subject
-Here, the source data of hMHS location are saved as 
-
-
-
-
-这个在github上的内部提交前补充完整，有图、有数据、有代码、有文字说明。提供把手部热点映射到个体T1的代码
