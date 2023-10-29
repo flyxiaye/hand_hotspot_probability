@@ -12,9 +12,15 @@ For clinical application, we provide a series of deterministic hMHS maps in diff
 And the deterministic hMHS maps in fsaverage32k and MNI152 template space are saved in [./hs_desc_maps/fsaverage32k](./hs_desc_maps/fsaverage32k/) and [./hs_desc_maps/MNI152](./hs_desc_maps/MNI152/), respectively. These population-based hMHS map can be warpped into native to acquire the individualized hMHS for TMS treatment.
 
 ## A simple tools for hMHS individualize
-There is a simple python scripts for hMHS individualize. This scripts uses the ANTs tool to map the population-based hMHS toward native hMHS. 
+There is a simple [python scripts](./code/hMHS_individualize.py) for hMHS individualize. This scripts uses the ANTs tool to map the population-based hMHS toward native hMHS. 
 
 Here is an example:
+```shell
+# Only providing the t1 image. The t1 MRI firstly acts as the reference image for registration from MNI152 to Native space. The default hMHS map is set by 'hs_desc_maps/MNI152/hs_map_prob-0.70.nii.gz'. The default output directory is the work directory.
+cd code
+python hMHS_individualize.py \
+    --subj_t1 $t1w_path
+```
 
 ## The hMHS location of each subject
 Here, the source data of hMHS location are saved as 
