@@ -27,3 +27,22 @@ python hMHS_individualize.py \
     --subj_t1 $t1w_path
 ```
 
+# Connectivity profile 
+We also computed the functional and structural connectivity of hMHS in both voxels level and brain areas level. The coresponding files are stored in [connectivity_profile](./connectivity_profile/).
+## Functional connectiviey
+As for funcitonal connectivity, the [zmap](./connectivity_profile/fc/) file save the independent one sample t-test result about functional connectivity in a cohort of subjects. The [fc_neg_log_pval.nii.gz](./connectivity_profile/fc/) is the tested p-value file with Bofferoni correction. 
+
+In addition, the brain areas level connectivty files are saved in [fc_conn_brain_areas.csv](./connectivity_profile/fc/). The description of columns are listed as follow:
+| Column name         | Description     |
+|--------------|-----------|
+| BNA ID | The ID encoded in Brainnetome atlas (BNA)    |
+| area name     | The brain area name defined in BNA |
+| all count | The number of voxels in every brain area of BNA |
+| count | The number of functionally significant voxels in every brain area |
+| z value| The mean z value of functionally significant voxels in every brain area |
+| rate | The ratio of `count` to `all count` |
+
+## Structural connectivity 
+Similarly, the sturctural connectivity files are saved in [sc_directory](./connectivity_profile/sc/). The coefficient of variation (CoV) without threshold is saved in [sc_cov.nii.gz](./connectivity_profile/sc/sc_cov.nii.gz). 
+
+And the sturctural connectivity file at brain areas level is saved in 
